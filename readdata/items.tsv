@@ -1,0 +1,93 @@
+Name	Rnd	Class	Loc	Curs	type	ItemId	MinMLvl	Durability	MinDam	MaxDam	MinAC	MaxAC	MinStr	MinMag	MinDex	MiscId	Spell	Usable	Magic	Value	MaxValue
+Gold	1	gold	inv	gold	gold	none	1	0	0	0	0	0	0	0	0	none	0	1	0	0	0
+Magic Rock	0	special	inv	rock	misc	none	0	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Tavern Sign	0	special	inv	innsign	misc	none	0	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Golden Elixir	0	item	inv	goldenelix	misc	elixir	15	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Anvil of Fury	0	special	inv	anvil	misc	none	0	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Black Mushroom	0	special	inv	mushroom	misc	none	0	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Fungal Tome	0	special	inv	book4	misc	none	0	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Spectral Elixir	0	item	inv	spectral	misc	elixir	15	0	0	0	0	0	0	0	0	spectral	0	0	0	0	0
+Blood Stone	0	special	inv	bloodgem	misc	none	0	0	0	0	0	0	0	0	0	none	0	0	0	0	0
+Map of the Stars	0	special	inv	map	misc	map	0	0	0	0	0	0	0	0	0	mapofdoom	0	1	0	0	0
+Staff of Lazarus	0	item	inv	bishopstf	misc	lazstaff	0	0	0	0	0	0	0	0	0	none	Firebolt	0	0	0	0
+Cap	1	armor	head	lcap	helm	none	1	15	0	0	1	3	0	0	0	none	0	0	0	15	20
+Skull Cap	1	armor	head	sklcap	helm	skullcap	4	20	0	0	2	4	0	0	0	none	0	0	0	25	30
+Helm	1	armor	head	fhelm	helm	helm	8	30	0	0	4	6	25	0	0	none	0	0	0	40	70
+Full Helm	1	armor	head	helm	helm	none	12	35	0	0	6	8	35	0	0	none	0	0	0	90	130
+Crown	1	armor	head	crown2	helm	crown	16	40	0	0	8	12	0	0	0	none	0	0	0	200	300
+Great Helm	1	armor	head	fhelm3	helm	greathelm	20	60	0	0	10	15	50	0	0	none	0	0	0	400	500
+Cape	1	armor	body	cape	armor	cape	1	12	0	0	1	5	0	0	0	none	0	0	0	10	50
+Rags	1	armor	body	rags	armor	rags	1	6	0	0	2	6	0	0	0	none	0	0	0	5	25
+Cloak	1	armor	body	cloak	armor	cloak	2	18	0	0	3	7	0	0	0	none	0	0	0	40	70
+Robe	1	armor	body	robe	armor	robe	3	24	0	0	4	7	0	0	0	none	0	0	0	75	125
+Quilted Armor	1	armor	body	qarmor	armor	none	4	30	0	0	7	10	0	0	0	none	0	0	0	200	300
+Leather Armor	1	armor	body	larmor	armor	leather	6	35	0	0	10	13	0	0	0	none	0	0	0	300	400
+Hard Leather Armor	1	armor	body	hlarmor	armor	none	7	40	0	0	11	14	0	0	0	none	0	0	0	450	550
+Studded Leather Armor	1	armor	body	stdarmor	armor	stdleather	9	45	0	0	15	17	20	0	0	none	0	0	0	700	800
+Ring Mail	1	armor	body	ringmail	marmor	none	11	50	0	0	17	20	25	0	0	none	0	0	0	900	1100
+Chain Mail	1	armor	body	charmor	marmor	chainmail	13	55	0	0	18	22	30	0	0	none	0	0	0	1250	1750
+Scale Mail	1	armor	body	sclarmor	marmor	none	15	60	0	0	23	28	35	0	0	none	0	0	0	2300	2800
+Breast Plate	1	armor	body	bplate	harmor	breastplate	16	80	0	0	20	24	40	0	0	none	0	0	0	2800	3200
+Splint Mail	1	armor	body	spltarmor	marmor	none	17	65	0	0	30	35	40	0	0	none	0	0	0	3250	3750
+Plate Mail	1	armor	body	parmor	harmor	platemail	19	75	0	0	42	50	60	0	0	none	0	0	0	4600	5400
+Field Plate	1	armor	body	parmor	harmor	none	21	80	0	0	40	45	65	0	0	none	0	0	0	5800	6200
+Gothic Plate	1	armor	body	parmor3	harmor	none	23	100	0	0	50	60	80	0	0	none	0	0	0	8000	10000
+Full Plate Mail	1	armor	body	parmor2	harmor	fullplate	25	90	0	0	60	75	90	0	0	none	0	0	0	6500	8000
+Buckler	1	armor	hand	buckler	shield	buckler	1	16	0	0	1	5	0	0	0	none	0	0	0	30	70
+Small Shield	1	armor	hand	wshield	shield	smallshld	5	24	0	0	3	8	25	0	0	none	0	0	0	90	130
+Large Shield	1	armor	hand	kiteshld	shield	largeshld	9	32	0	0	5	10	40	0	0	none	0	0	0	200	300
+Kite Shield	1	armor	hand	hvyshield	shield	kiteshld	14	40	0	0	8	15	50	0	0	none	0	0	0	400	700
+Tower Shield	1	armor	hand	tshield	shield	towershld	20	50	0	0	12	20	60	0	0	none	0	0	0	850	1200
+Gothic Shield	1	armor	hand	lrgshld	shield	none	23	60	0	0	14	18	80	0	0	none	0	0	0	2300	2700
+Potion of Healing	1	item	inv	redbtl	misc	none	1	0	0	0	0	0	0	0	0	plheal	0	1	0	50	50
+Potion of Full Healing	1	item	inv	bredbtl	misc	none	1	0	0	0	0	0	0	0	0	pheal	0	1	0	150	150
+Potion of Mana	1	item	inv	bluebtl2	misc	none	1	0	0	0	0	0	0	0	0	pmana	0	1	0	50	50
+Potion of Full Mana	1	item	inv	bluebtl	misc	none	1	0	0	0	0	0	0	0	0	pfmana	0	1	0	150	150
+Potion of Rejuvenation	1	item	inv	goldbtl	misc	none	3	0	0	0	0	0	0	0	0	rejuv	0	1	0	120	120
+Potion of Full Rejuvenation	1	item	inv	yelbtl	misc	none	7	0	0	0	0	0	0	0	0	frejuv	0	1	0	600	600
+Elixir of Strength	1	item	inv	ltbluebtl	misc	none	15	0	0	0	0	0	0	0	0	estr	0	1	0	5000	5000
+Elixir of Magic	1	item	inv	orgbtl	misc	none	15	0	0	0	0	0	0	0	0	emag	0	1	0	5000	5000
+Elixir of Dexterity	1	item	inv	blkbtl2	misc	none	15	0	0	0	0	0	0	0	0	edex	0	1	0	5000	5000
+Elixir of Vitality	1	item	inv	whtebtl	misc	none	20	0	0	0	0	0	0	0	0	evit	0	1	0	5000	5000
+Scroll of 	1	item	inv	scroll	misc	none	1	0	0	0	0	0	0	0	0	scroll	Apocalypse	1	0	0	0
+Book of 	1	item	inv	book	misc	none	20	0	0	0	0	0	0	0	0	book	Nova	1	0	0	0
+Dagger	1	weap	hand	dagger2	sword	dagger	1	16	1	4	0	0	0	0	0	none	0	0	0	60	60
+Short Sword	1	weap	hand	shortsrd	sword	none	1	24	2	6	0	0	18	0	0	none	0	0	0	120	120
+Falchion	1	weap	hand	scimitar	sword	falchion	2	20	4	8	0	0	30	0	0	none	0	0	0	250	250
+Scimitar	1	weap	hand	scimitar2	sword	scimitar	4	28	3	7	0	0	23	0	23	none	0	0	0	200	200
+Claymore	1	weap	hand	claymore	sword	claymore	5	36	1	12	0	0	35	0	0	none	0	0	0	450	450
+Blade	1	weap	hand	blade	sword	none	4	30	3	8	0	0	25	0	30	none	0	0	0	280	280
+Sabre	1	weap	hand	sabre	sword	sabre	1	45	1	8	0	0	17	0	0	none	0	0	0	170	170
+Long Sword	1	weap	hand	longsrd	sword	longsword	6	40	2	10	0	0	30	0	30	none	0	0	0	350	350
+Broad Sword	1	weap	hand	broadsrd	sword	broadsword	8	50	4	12	0	0	40	0	0	none	0	0	0	750	750
+Bastard Sword	1	weap	hand	bastsrd	sword	bastsword	10	60	6	15	0	0	50	0	0	none	0	0	0	1000	1000
+Two-Handed Sword	1	weap	2hand	2hsword	sword	2handsword	14	75	8	16	0	0	65	0	0	none	0	0	0	1800	1800
+Great Sword	1	weap	2hand	grtsword	sword	greatsword	17	100	10	20	0	0	75	0	0	none	0	0	0	3000	3000
+Small Axe	1	weap	2hand	smallaxe	axe	smallaxe	2	24	2	10	0	0	0	0	0	none	0	0	0	150	150
+Axe	1	weap	2hand	handaxe	axe	none	4	32	4	12	0	0	22	0	0	none	0	0	0	450	450
+Large Axe	1	weap	2hand	lrgaxe	axe	largeaxe	6	40	6	16	0	0	30	0	0	none	0	0	0	750	750
+Broad Axe	1	weap	2hand	broadaxe	axe	broadaxe	8	50	8	20	0	0	50	0	0	none	0	0	0	1000	1000
+Battle Axe	1	weap	2hand	btlaxe	axe	battleaxe	10	60	10	25	0	0	65	0	0	none	0	0	0	1500	1500
+Great Axe	1	weap	2hand	wickaxe	axe	greataxe	12	75	12	30	0	0	80	0	0	none	0	0	0	2500	2500
+Mace	1	weap	hand	mace	mace	mace	2	32	1	8	0	0	16	0	0	none	0	0	0	200	200
+Morning Star	1	weap	hand	mornstar	mace	mornstar	3	40	1	10	0	0	26	0	0	none	0	0	0	300	300
+War Hammer	1	weap	hand	smlwarham	mace	warhammer	5	50	5	9	0	0	40	0	0	none	0	0	0	600	600
+Spiked Club	1	weap	hand	club2	mace	none	4	20	3	6	0	0	18	0	0	none	0	0	0	225	225
+Club	1	weap	hand	club	mace	club	1	20	1	6	0	0	0	0	0	none	0	0	0	20	20
+Flail	1	weap	hand	flail	mace	flail	7	36	2	12	0	0	30	0	0	none	0	0	0	500	500
+Maul	1	weap	2hand	maul	mace	maul	10	50	6	20	0	0	55	0	0	none	0	0	0	900	900
+Short Bow	2	weap	2hand	shortbow	bow	shortbow	1	30	1	4	0	0	0	0	0	none	0	0	0	100	100
+Hunter's Bow	2	weap	2hand	longbow	bow	bow	3	40	2	5	0	0	20	0	35	none	0	0	0	350	350
+Long Bow	2	weap	2hand	longbow	bow	longbow	5	35	1	6	0	0	25	0	30	none	0	0	0	250	250
+Composite Bow	2	weap	2hand	hntrbow	bow	compbow	7	45	3	6	0	0	25	0	40	none	0	0	0	600	600
+Short Battle Bow	2	weap	2hand	sbatlbow	bow	none	9	45	3	7	0	0	30	0	50	none	0	0	0	750	750
+Long Battle Bow	2	weap	2hand	stllongbow	bow	lbattlebow	11	50	1	10	0	0	30	0	60	none	0	0	0	1000	1000
+Short War Bow	2	weap	2hand	swarbow	bow	none	15	55	4	8	0	0	35	0	70	none	0	0	0	1500	1500
+Long War Bow	2	weap	2hand	stllongbow	bow	lwarbow	19	60	1	14	0	0	45	0	80	none	0	0	0	2000	2000
+Short Staff	1	weap	2hand	shrtstaff	staff	shortstaff	1	25	2	4	0	0	0	0	0	staff	0	0	1	30	30
+Long Staff	1	weap	2hand	ironstaff	staff	longstaff	4	35	4	8	0	0	0	0	0	staff	0	0	1	100	100
+Composite Staff	1	weap	2hand	compstf	staff	compstaff	6	45	5	10	0	0	0	0	0	staff	0	0	1	500	500
+Quarter Staff	1	weap	2hand	shrtstaff	staff	qtrstaff	9	55	6	12	0	0	20	0	0	staff	0	0	1	1000	1000
+War Staff	1	weap	2hand	stlstaff	staff	warstaff	12	75	8	16	0	0	30	0	0	staff	0	0	1	1500	1500
+Ring	1	item	ring	slvrring	ring	ring	5	0	0	0	0	0	0	0	0	ring	0	0	1	1000	1000
+Amulet	1	item	neck	amulet1	amulet	amulet	16	0	0	0	0	0	0	0	0	amulet	0	0	1	1200	1200
