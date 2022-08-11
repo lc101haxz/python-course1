@@ -134,8 +134,8 @@ def main():
 	# read the TSV file using the CSV library
 	listItems = []
 	with open(DATAFILE) as csvfile:
-		spamreader = csv.DictReader(csvfile, delimiter='\t', quotechar='"')
-		for row in spamreader:
+		csvdata = csv.DictReader(csvfile, delimiter='\t', quotechar='"')
+		for row in csvdata:
 			listItems.append(row)
 
 	# print based on the option we chose
