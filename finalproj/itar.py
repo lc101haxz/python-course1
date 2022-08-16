@@ -23,6 +23,8 @@ import os
 # } TarHeader;
 
 BLOCKSIZE = 512
+RECORDS = 20
+TAPESIZE = RECORDS * BLOCKSIZE
 
 # POSIX 1003.1-1988
 USTAR_DIR_MODE = b"0000755"
@@ -30,7 +32,7 @@ USTAR_FILE_MODE = b"0000644"
 USTAR_UID = b"0000000"
 USTAR_GID = b"0000000"
 USTAR_MTIME = b"00000000000"
-USTAR_CHKSUM = b"000000"
+USTAR_CHKSUM = b"       "
 USTAR_DIR_TYPE = b" 5"
 USTAR_FILE_TYPE = b" 0"
 USTAR_MAGIC = b"ustar"
@@ -38,31 +40,75 @@ USTAR_VERSION = b"00"
 USTAR_DEVMAJOR = b"0000000"
 USTAR_DEVMINOR = b"0000000"
 
-def TarAddHeader(tarfile, filename):
+def DecimalToOctal(n, len):
+	temp = [0] * len
+
+	i = 0
+	while (n != 0):
+		temp[i] = n % 8
+		n = int(n / 8)
+		i += 1
+
+	temp.reverse()
+	octal = ''.join(str(x) for x in temp)
+	return octal
+
+def ComputeChksum(data, sum):
+	for c in data:
+		sum += c
+	return sum
+
+def TarAddHeader(tarfile, filename, ofilesize):
+	hdrstart = tarfile.tell()
+
 	tarfile.write(bytes(filename, "utf-8"))
-	tarfile.seek(100, os.SEEK_SET)
+	chksum = ComputeChksum(bytes(filename, "utf-8"), 0)
+
+	tarfile.seek(hdrstart + 100, os.SEEK_SET)
 	tarfile.write(USTAR_FILE_MODE)
-	tarfile.seek(108, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_FILE_MODE, chksum)
+
+	tarfile.seek(hdrstart + 108, os.SEEK_SET)
 	tarfile.write(USTAR_UID)
-	tarfile.seek(116, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_UID, chksum)
+
+	tarfile.seek(hdrstart + 116, os.SEEK_SET)
 	tarfile.write(USTAR_GID)
-	tarfile.seek(124, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_GID, chksum)
+
+	tarfile.seek(hdrstart + 124, os.SEEK_SET)
+	tarfile.write(bytes(ofilesize, "utf-8"))
+	chksum = ComputeChksum(bytes(ofilesize, "utf-8"), chksum)
+
+	tarfile.seek(hdrstart + 136, os.SEEK_SET)
 	tarfile.write(USTAR_MTIME)
-	tarfile.seek(136, os.SEEK_SET)
-	tarfile.write(USTAR_MTIME)
-	tarfile.seek(148, os.SEEK_SET)
-	tarfile.write(USTAR_CHKSUM)
-	tarfile.seek(155, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_MTIME, chksum)
+
+	tarfile.seek(hdrstart + 155, os.SEEK_SET)
 	tarfile.write(USTAR_FILE_TYPE)
-	tarfile.seek(257, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_FILE_TYPE, chksum)
+
+	tarfile.seek(hdrstart + 257, os.SEEK_SET)
 	tarfile.write(USTAR_MAGIC)
-	tarfile.seek(263, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_MAGIC, chksum)
+
+	tarfile.seek(hdrstart + 263, os.SEEK_SET)
 	tarfile.write(USTAR_VERSION)
-	tarfile.seek(329, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_VERSION, chksum)
+
+	tarfile.seek(hdrstart + 329, os.SEEK_SET)
 	tarfile.write(USTAR_DEVMAJOR)
-	tarfile.seek(337, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_DEVMAJOR, chksum)
+
+	tarfile.seek(hdrstart + 337, os.SEEK_SET)
 	tarfile.write(USTAR_DEVMINOR)
-	tarfile.seek(512, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_DEVMINOR, chksum)
+
+	tarfile.seek(hdrstart + 148, os.SEEK_SET)
+	chksum = ComputeChksum(USTAR_CHKSUM, chksum)
+	tarfile.write(bytes(DecimalToOctal(chksum, 6), "utf-8"))
+
+	tarfile.seek(hdrstart + 512, os.SEEK_SET)
 
 def TarAddFile(tarfile, filename):
 	# open the file
@@ -73,8 +119,10 @@ def TarAddFile(tarfile, filename):
 	filesize = stream.tell()
 	stream.seek(0, os.SEEK_SET)
 
+	ofilesize = DecimalToOctal(filesize, 11)
+
 	# write the file header
-	TarAddHeader(tarfile, filename)
+	TarAddHeader(tarfile, filename, ofilesize)
 
 	# write the file
 	tarfile.write(stream.read())
@@ -87,17 +135,19 @@ def TarAddFile(tarfile, filename):
 	padsize -= filesize
 	tarfile.seek(tarfile.tell() + padsize)
 
-def TarEmptyBlock(tarfile):
-	closesize = 512
-	while closesize != 0:
-		tarfile.write(b"\x00")
-		closesize -= 1
+def TarCloseArchive(tarfile):
+	closesize = tarfile.tell()
+	closesize += TAPESIZE
+	closesize -= closesize % TAPESIZE
+	tarfile.seek(closesize - 1, os.SEEK_SET)
+	tarfile.write(b"\x00")
 
 def main():
 	tarfile = open("output.tar", "wb")
 
 	TarAddFile(tarfile, "junk.bin")
-	TarEmptyBlock(tarfile)
+	TarAddFile(tarfile, "junk.bin")
+	TarCloseArchive(tarfile)
 
 	tarfile.close()
 
